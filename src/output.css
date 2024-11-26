@@ -630,6 +630,26 @@ video {
   height: 100vh;
 }
 
+.h-\[\] {
+  height: ;
+}
+
+.h-\[500\] {
+  height: 500;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
+.h-\[300px\] {
+  height: 300px;
+}
+
+.h-\[700px\] {
+  height: 700px;
+}
+
 .w-\[300px\] {
   width: 300px;
 }
@@ -668,6 +688,18 @@ video {
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[500px\] {
+  width: 500px;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -747,6 +779,26 @@ video {
   background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
 }
 
+.bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+}
+
+.bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#0D1B2A\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 27 42 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#333333\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(51 51 51 / var(--tw-bg-opacity, 1));
+}
+
 .bg-cover {
   background-size: cover;
 }
@@ -775,4 +827,8 @@ video {
 
 .opacity-95 {
   opacity: 0.95;
+}
+
+.bg-blend-color {
+  background-blend-mode: color;
 }
