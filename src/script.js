@@ -78,104 +78,68 @@ document.getElementById('hideForm').addEventListener('click', function() {
 
 
 
-   
-    // JSON 
-    // fetch('players.json')
-    //     .then(response => {
-    //         return response.json();
-    //     })
-    //     .then(data => {
-    //         const container = document.getElementById('cards-container');
-            
-    //         data.players.forEach(player => {
-               
-    //             const card = document.createElement('div');
-    //             card.className = 'bg-[url("../img/badge_gold.webp")]   bg-cover bg-center text-white p-4  ';
-
-
-    //             // Ajouter le contenu de la carte
-    //             card.innerHTML = `
-    //                 <img src="${player.photo}" alt="${player.name}" class="w-full rounded-md mb-2 ">
-    //                 <h3 class="text-lg font-bold">${player.name}</h3>
-    //                 <p class="text-sm text-gray-400">Position: ${player.position}</p>
-    //                 <p class="text-sm text-gray-400">Club: <img src="${player.logo}" alt="${player.club}" class="inline w-5 h-5 ml-1">${player.club}</p>
-    //                 <p class="text-sm text-gray-400">Nationality: <img src="${player.flag}" alt="${player.nationality}" class="inline w-5 h-5 ml-1">${player.nationality}</p>
-    //                 <p class="text-sm text-gray-400">Rating: <span class="text-yellow-400">${player.rating}</span></p>
-    //                 <div class="grid grid-cols-3 gap-1 mt-2 text-xs">
-    //                     <div class="text-center">Pace: ${player.pace}</div>
-    //                     <div class="text-center">Shooting: ${player.shooting}</div>
-    //                     <div class="text-center">Passing: ${player.passing}</div>
-    //                     <div class="text-center">Dribbling: ${player.dribbling}</div>
-    //                     <div class="text-center">Defending: ${player.defending}</div>
-    //                     <div class="text-center">Physical: ${player.physical}</div>
-    //                 </div>
-    //             `;
-
-    //             // Ajouter la carte au conteneur
-    //             container.appendChild(card);
-    //         });
-    //     })
-
-    
-fetch("players.json")
-.then((response) => response.json())
-.then((data) => {
-  for(let i = 0; i <7; i++){
-  let jsonCartesHtml =`
-   card.innerHTML = `
-        <img src="${player.backgroundImage || '../img/badge_gold.webp'}" alt="Player Card Background"
-            class="absolute inset-0 w-full h-full object-cover" />
+//  JSON
+    fetch("players.json")
+    .then((response) => response.json()) 
+    .then((data) => {
+      const container = document.getElementById('cards-container'); 
+  
+      data.players.forEach(player => {
         
-        <div class="absolute inset-0 mb-2 flex flex-col items-center justify-center text-white p-2">
-            <div class="flex items-center">
-                <div class="flex flex-col justify-between items-center w-[10%] h-5">
-                    <span class="text-sm font-bold text-yellow-600">${player.rating}</span>
-                    <span class="text-sm font-semibold">${player.position}</span>
-                </div>
-                
-                <div>
-                    <img src="${player.photo}" alt="Profil" class="w-16 h-16 rounded-md" />
-                </div>
-            </div>
-
-            <h3 class="text-center text-sm font-bold">${player.name}</h3>
-
-            <div class="flex justify-between items-center w-[30%]">
+        let jsonCartesHtml = `
+          <div class="relative w-36 h-52 ">
+            <img src="${player.backgroundImage || '../img/badge_gold.webp'}" alt="" class="absolute inset-0 w-full h-full object-cover" />
+  
+            <div class="absolute inset-0 mb-2 flex flex-col items-center justify-center text-white p-2">
                 <div class="flex items-center">
-                    <img src="${player.flag}" alt="Nationality" class="w-4 h-4 rounded-sm" />
+                    <div class="flex flex-col justify-between items-center w-[10%] h-5">
+                        <span class="text-sm font-bold text-yellow-600">${player.rating}</span>
+                        <span class="text-sm font-semibold">${player.position}</span>
+                    </div>
+  
+                    <div>
+                        <img src="${player.photo}" alt="" class="w-16 h-16 rounded-md" />
+                    </div>
                 </div>
-                <span class="w-5 h-5">${player.club}</span>
+  
+                <h3 class="text-center text-sm font-bold">${player.name}</h3>
+  
+                 <div class="flex justify-between items-center ">
+                    <div class="flex items-center">
+                        <img src="${player.flag}" alt="Nationality" class="w-4 h-4 rounded-sm" />
+                    </div>
+                    <span class="block text-center text-xs">${player.club}</span>
+                </div>
+  
+                <div class="flex flex-col text-xs w-full px-2 h-16">
+                    <div class="flex justify-around">
+                        <span>PAC:</span>
+                        <span>${player.pace}</span>
+  
+                        <span>SHO:</span>
+                        <span>${player.shooting}</span>
+                    </div>
+                    <div class="flex justify-around">
+                        <span>PAS:</span>
+                        <span>${player.passing}</span>
+  
+                        <span>DRI:</span>
+                        <span>${player.dribbling}</span>
+                    </div>
+                    <div class="flex justify-around">
+                        <span>DEF:</span>
+                        <span>${player.defending}</span>
+  
+                        <span>PHY:</span>
+                        <span>${player.physical}</span>
+                    </div>
+                </div>
             </div>
-
-            <div class="flex flex-col text-xs w-full px-2 h-16">
-                <div class="flex justify-around">
-                    <span>PAC:</span>
-                    <span>${player.pace}</span>
-
-                    <span>SHO:</span>
-                    <span>${player.shooting}</span>
-                </div>
-                <div class="flex justify-around">
-                    <span>PAS:</span>
-                    <span>${player.passing}</span>
-
-                    <span>DRI:</span>
-                    <span>${player.dribbling}</span>
-                </div>
-                <div class="flex justify-around">
-                    <span>DEF:</span>
-                    <span>${player.defending}</span>
-
-                    <span>PHY:</span>
-                    <span>${player.physical}</span>
-                </div>
-            </div>
-        </div>
-      `;
-
-`
-document.getElementById('bank').insertAdjacentHTML("beforeEnd", jsonCartesHtml);
-}
-})
-       
-
+          </div>
+        `;
+  
+        
+        container.insertAdjacentHTML("beforeEnd", jsonCartesHtml);
+      });
+    })
+    
