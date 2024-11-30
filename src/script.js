@@ -13,67 +13,60 @@ document.getElementById('hideForm').addEventListener('click', function() {
 
 
 //model change gk
+let positionSelect = document.getElementById('Position');
+let attributesDiv = document.getElementById('attributes');
 
-    let name = document.getElementById('name').value; 
-    let Position = document.getElementById('Position').value;
-    let Club = document.getElementById('club').value;
-    let Nationality = document.getElementById('Nationality').value;
-    let rating = document.getElementById('rating').value;
+positionSelect.addEventListener('change', () => {
+    let selectedPosition = positionSelect.value;
 
-    let positionSelect = document.getElementById('Position');
-    let attributesDiv = document.getElementById('attributes');
+    if (selectedPosition === 'GK') {
+        attributesDiv.innerHTML = `
+            <div class="flex">
+                <h3 class="text-white">Diving</h3>
+                <input type="number" id="diving" name="diving" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
-    positionSelect.addEventListener('change', () => {
-        let selectedPosition = positionSelect.value;
+                <h3 class="text-white">Handling</h3>
+                <input type="number" id="handling" name="handling" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
-        if (selectedPosition === 'GK') {
-            attributesDiv.innerHTML = `
-                <div class="flex">
-                    <h3 class="text-white">Diving</h3>
-                    <input type="number" id="diving" name="diving" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
+                <h3 class="text-white">Kicking</h3>
+                <input type="number" id="kicking" name="kicking" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
+            </div>
+            <div class="flex">
+                <h3 class="text-white">Reflexes</h3>
+                <input type="number" id="reflexes" name="reflexes" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
-                    <h3 class="text-white">Handling</h3>
-                    <input type="number" id="handling" name="handling" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
+                <h3 class="text-white">Speed</h3>
+                <input type="number" id="speed" name="speed" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
-                    <h3 class="text-white">Kicking</h3>
-                    <input type="number" id="kicking" name="kicking" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
-                </div>
-                <div class="flex">
-                    <h3 class="text-white">Reflexes</h3>
-                    <input type="number" id="reflexes" name="reflexes" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
+                <h3 class="text-white">Positioning</h3>
+                <input type="number" id="positioning" name="positioning" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
+            </div>
+        `;
+    } else {
+        attributesDiv.innerHTML = `
+            <div class="flex">
+                <h3 class="text-white">Pace</h3>
+                <input type="number" id="pace" name="pace" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
-                    <h3 class="text-white">Speed</h3>
-                    <input type="number" id="speed" name="speed" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
+                <h3 class="text-white">Shooting</h3>
+                <input type="number" id="shooting" name="shooting" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
-                    <h3 class="text-white">positioning</h3>
-                    <input type="number" id="positioning" name="positioning" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
-                </div>
-            `;
-        } else {
-            attributesDiv.innerHTML = `
-                <div class="flex">
-                    <h3 class="text-white">Pace</h3>
-                    <input type="number" id="pace" name="pace" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
+                <h3 class="text-white">Passing</h3>
+                <input type="number" id="passing" name="passing" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
+            </div>
+            <div class="flex">
+                <h3 class="text-white">Dribbling</h3>
+                <input type="number" id="dribbling" name="dribbling" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
-                    <h3 class="text-white">Shooting</h3>
-                    <input type="number" id="shooting" name="shooting" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
+                <h3 class="text-white">Defending</h3>
+                <input type="number" id="defending" name="defending" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
-                    <h3 class="text-white">Passing</h3>
-                    <input type="number" id="passing" name="passing" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
-                </div>
-                <div class="flex">
-                    <h3 class="text-white">Dribbling</h3>
-                    <input type="number" id="dribbling" name="dribbling" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
-
-                    <h3 class="text-white">Defending</h3>
-                    <input type="number" id="defending" name="defending" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
-
-                    <h3 class="text-white">Physical</h3>
-                    <input type="number" id="physical" name="physical" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
-                </div>
-            `;
-        }
-    });
+                <h3 class="text-white">Physical</h3>
+                <input type="number" id="physical" name="physical" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
+            </div>
+        `;
+    }
+});
 
 
 
@@ -87,57 +80,114 @@ document.getElementById('hideForm').addEventListener('click', function() {
       data.players.forEach(player => {
         
         let jsonCartesHtml = `
-          <div class="relative w-36 h-52 flex flex-wrap justify-center gap-4 ">
+        <div class="relative w-36 h-52 flex flex-wrap justify-center gap-4">
+          <img src="../img/badge_gold.webp" alt="" class="absolute inset-0 w-full h-full object-cover" />
+        
+          <div class="absolute inset-0 mb-2 flex flex-col items-center justify-center text-white p-2">
+            <div class="flex items-center">
+              <div class="flex flex-col justify-between items-center w-[10%] h-5">
+                <span class="text-sm font-bold text-yellow-600">${player.rating}</span>
+                <span class="text-sm font-semibold">${player.position}</span>
+              </div>
+      
+              <div>
+                <img src="${player.photo}" alt="" class="w-16 h-16 rounded-md" />
+              </div>
+            </div>
+      
+            <h3 class="text-center text-sm font-bold">${player.name}</h3>
+      
+            <div class="flex justify-between items-center">
+              <div class="flex items-center">
+                <img src="${player.flag}" alt="Nationality" class="w-4 h-4 rounded-sm" />
+              </div>
+              <span class="block text-center text-xs">${player.club}</span>
+            </div>
+      
+            <!-- Section with stats based on position -->
+            <div class="flex flex-col text-xs w-full px-2 h-16">
+              <div class="flex justify-around">
+                <span>PAC:</span>
+                <span>${player.pace}</span>
+      
+                <span>SHO:</span>
+                <span>${player.shooting}</span>
+              </div>
+              <div class="flex justify-around">
+                <span>PAS:</span>
+                <span>${player.passing}</span>
+      
+                <span>DRI:</span>
+                <span>${player.dribbling}</span>
+              </div>
+              <div class="flex justify-around">
+                <span>DEF:</span>
+                <span>${player.defending}</span>
+      
+                <span>PHY:</span>
+                <span>${player.physical}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      // Condition to check if player is GK (Goalkeeper)
+      if (player.position === 'GK') {
+        jsonCartesHtml = `
+          <div class="relative w-36 h-52 flex flex-wrap justify-center gap-4">
             <img src="../img/badge_gold.webp" alt="" class="absolute inset-0 w-full h-full object-cover" />
-  
+        
             <div class="absolute inset-0 mb-2 flex flex-col items-center justify-center text-white p-2">
+              <div class="flex items-center">
+                <div class="flex flex-col justify-between items-center w-[10%] h-5">
+                  <span class="text-sm font-bold text-yellow-600">${player.rating}</span>
+                  <span class="text-sm font-semibold">${player.position}</span>
+                </div>
+      
+                <div>
+                  <img src="${player.photo}" alt="" class="w-16 h-16 rounded-md" />
+                </div>
+              </div>
+      
+              <h3 class="text-center text-sm font-bold">${player.name}</h3>
+      
+              <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    <div class="flex flex-col justify-between items-center w-[10%] h-5">
-                        <span class="text-sm font-bold text-yellow-600">${player.rating}</span>
-                        <span class="text-sm font-semibold">${player.position}</span>
-                    </div>
-  
-                    <div>
-                        <img src="${player.photo}" alt="" class="w-16 h-16 rounded-md" />
-                    </div>
+                  <img src="${player.flag}" alt="Nationality" class="w-4 h-4 rounded-sm" />
                 </div>
-  
-                <h3 class="text-center text-sm font-bold">${player.name}</h3>
-  
-                 <div class="flex justify-between items-center ">
-                    <div class="flex items-center">
-                        <img src="${player.flag}" alt="Nationality" class="w-4 h-4 rounded-sm" />
-                    </div>
-                    <span class="block text-center text-xs">${player.club}</span>
+                <span class="block text-center text-xs">${player.club}</span>
+              </div>
+      
+              <!-- Specific stats for GK (Goalkeeper) -->
+              <div class="flex flex-col text-xs w-full px-2 h-16">
+                <div class="flex justify-around">
+                  <span>DIV:</span>
+                  <span>${player.diving}</span>
+      
+                  <span>HAN:</span>
+                  <span>${player.handling}</span>
                 </div>
-  
-                <div class="flex flex-col text-xs w-full px-2 h-16">
-                    <div class="flex justify-around">
-                        <span>PAC:</span>
-                        <span>${player.pace}</span>
-  
-                        <span>SHO:</span>
-                        <span>${player.shooting}</span>
-                    </div>
-                    <div class="flex justify-around">
-                        <span>PAS:</span>
-                        <span>${player.passing}</span>
-  
-                        <span>DRI:</span>
-                        <span>${player.dribbling}</span>
-                    </div>
-                    <div class="flex justify-around">
-                        <span>DEF:</span>
-                        <span>${player.defending}</span>
-  
-                        <span>PHY:</span>
-                        <span>${player.physical}</span>
-                    </div>
+                <div class="flex justify-around">
+                  <span>KIC:</span>
+                  <span>${player.kicking}</span>
+      
+                  <span>REF:</span>
+                  <span>${player.reflexes}</span>
                 </div>
+                <div class="flex justify-around">
+                  <span>SPD:</span>
+                  <span>${player.speed}</span>
+      
+                  <span>POS:</span>
+                  <span>${player.positioning}</span>
+                </div>
+              </div>
             </div>
           </div>
         `;
-  
+      }
+      
         
         container.insertAdjacentHTML("beforeEnd", jsonCartesHtml);
       });
@@ -192,12 +242,12 @@ document.getElementById('submit').addEventListener('click', function(e) {
     // let  logo= document.getElementById('logo').value;
     let  rating= document.getElementById('rating').value;
 
-    // let  pace= document.getElementById('pace').value;
-    // let  shooting= document.getElementById('shooting').value;
-    // let  passing= document.getElementById('passing').value;
-    // let  dribbling= document.getElementById('dribbling').value;
-    // let  defending= document.getElementById('defending').value;
-    // let  physical= document.getElementById('physical').value;
+    let  pace= document.getElementById('pace').value;
+    let  shooting= document.getElementById('shooting').value;
+    let  passing= document.getElementById('passing').value;
+    let  dribbling= document.getElementById('dribbling').value;
+    let  defending= document.getElementById('defending').value;
+    let  physical= document.getElementById('physical').value;
 
 
     let  diving= document.getElementById('diving').value;
