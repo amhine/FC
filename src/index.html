@@ -308,9 +308,11 @@
                     <div id="formulair" class="absolute flex justify-center items-start mt-4 top-0 bg-gray-700 bg-opacity-50   hidden">
                         <form id="form" class="bg-[#333333] w-[400px] h-auto p-6 rounded-lg ">
                             <h3 class="text-white" >Nom :</h3>
+                            <span id="nameeror" class="text-red-600"></span>
                             <input type="text" id="name" name="name" class="w-full p-2 mb-4 rounded-md bg-gray-200">
 
                             <h3 class="text-white">Photo (URL) :</h3>
+                            <span id="photoeror" class="text-red-600"></span>
                             <input type="url" id="photo" name="photo" class="w-full p-2 mb-4 rounded-md bg-gray-200" placeholder="URL de la photo du joueur" >
                     
                             
@@ -326,33 +328,43 @@
                             </select>
                     
                             <h3 class="text-white">Club :</h3>
+                            <span id="cluberror" class="text-red-600"></span>
                             <input type="text" id="club" name="club" class="w-full p-2 mb-4 rounded-md bg-gray-200">
                     
                             <h3 class="text-white">Nationality (URL):</h3>
+                            <span id="nateror" class="text-red-600"></span>
+                           
                             <input type="url" id="Nationality" name="nationality" class="w-full p-2 mb-4 rounded-md bg-gray-200" placeholder="URL de la nationality du joueur" >
                     
                             <h3 class="text-white">Rating :</h3>
+                            <span id="rateror" class="text-red-600"></span>
                             <input type="number" id="rating" name="rating" class="w-full p-2 mb-4 rounded-md bg-gray-200">
 
                             <div id="joueurstatus">
                                 <div class="flex  ">
                                     <h3 class="text-white">Pace</h3>
+                                    <span id="paceror" class="text-red-600"></span>
                                     <input type="number" id="pace" name="pace" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
                                     <h3 class="text-white">Shooting</h3>
+                                    <span id="shoteror" class="text-red-600"></span>
                                     <input type="number" id="shooting" name="shooting" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200" >
 
                                     <h3 class="text-white">Passing</h3>
+                                    <span id="passineror" class="text-red-600"></span>
                                     <input type="number" id="passing" name="passing" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
                                 </div>
                                 <div class="flex ">
                                     <h3 class="text-white">Dribbling</h3>
+                                    <span id="driberor" class="text-red-600"></span>
                                     <input type="number" id="dribbling" name="dribbling" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
                                     <h3 class="text-white">Defending</h3>
+                                    <span id="deferor" class="text-red-600"></span>
                                     <input type="number" id="defending" name="defending" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
                                     <h3 class="text-white">Physical</h3>
+                                    <span id="phyeror" class="text-red-600"></span>
                                     <input type="number" id="physical" name="physical" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
                                 
                                 </div> 
@@ -364,22 +376,28 @@
                             <div id="GKstatus" class="hidden">
                                 <div class="flex  ">
                                     <h3 class="text-white">diving</h3>
+                                    <span id="diveror" class="text-red-600"></span>
                                     <input type="number" id="diving" name="diving" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
                                     <h3 class="text-white">handling</h3>
+                                    <span id="haneror" class="text-red-600"></span>
                                     <input type="number" id="handling" name="handling" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200" >
 
                                     <h3 class="text-white">kicking</h3>
+                                    <span id="kiceror" class="text-red-600"></span>
                                     <input type="number" id="kicking" name="kicking" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
                                 </div>
                                 <div class="flex ">
                                     <h3 class="text-white">reflexes</h3>
+                                    <span id="referor" class="text-red-600"></span>
                                     <input type="number" id="reflexes" name="reflexes" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
                                     <h3 class="text-white">speed</h3>
+                                    <span id="spederor" class="text-red-600"></span>
                                     <input type="number" id="speed" name="speed" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
 
                                     <h3 class="text-white">positioning</h3>
+                                    <span id="poseror" class="text-red-600"></span>
                                     <input type="number" id="positioning" name="positioning" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
                                 
                                 </div> 
