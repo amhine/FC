@@ -12,37 +12,37 @@ document.getElementById('hideForm').addEventListener('click', function () {
 });
 
 
-// // Ajout par form
-document.getElementById('submit').addEventListener('click', function (e) {
-  e.preventDefault(); 
-  console.log(1);
+// // // Ajout par form
+// document.getElementById('submit').addEventListener('click', function (e) {
+//   e.preventDefault(); 
+//   console.log(1);
 
-  let joueur = {
-      name: document.getElementById('name').value,
-      photo: document.getElementById('photo').value,
-      position: document.getElementById('Position').value,
-      nationality: document.getElementById('Nationality').value,
-      club: document.getElementById('club').value,
-      rating: document.getElementById('rating').value,
-      pace: document.getElementById('pace').value,
-      shooting: document.getElementById('shooting').value,
-      passing: document.getElementById('passing').value,
-      dribbling: document.getElementById('dribbling').value,
-      defending: document.getElementById('defending').value,
-      physical: document.getElementById('physical').value,
-      diving: document.getElementById('diving').value,
-      handling: document.getElementById('handling').value,
-      kicking: document.getElementById('kicking').value,
-      reflexes: document.getElementById('reflexes').value,
-      speed: document.getElementById('speed').value,
-      positioning: document.getElementById('positioning').value,
-  };
-    tableaujouer.push(joueur);
-  displayAllPlayers();
-  document.getElementById('form').reset();
-  document.getElementById('formulair').remove();
+//   let joueur = {
+//       name: document.getElementById('name').value,
+//       photo: document.getElementById('photo').value,
+//       position: document.getElementById('Position').value,
+//       nationality: document.getElementById('Nationality').value,
+//       club: document.getElementById('club').value,
+//       rating: document.getElementById('rating').value,
+//       pace: document.getElementById('pace').value,
+//       shooting: document.getElementById('shooting').value,
+//       passing: document.getElementById('passing').value,
+//       dribbling: document.getElementById('dribbling').value,
+//       defending: document.getElementById('defending').value,
+//       physical: document.getElementById('physical').value,
+//       diving: document.getElementById('diving').value,
+//       handling: document.getElementById('handling').value,
+//       kicking: document.getElementById('kicking').value,
+//       reflexes: document.getElementById('reflexes').value,
+//       speed: document.getElementById('speed').value,
+//       positioning: document.getElementById('positioning').value,
+//   };
+//     tableaujouer.push(joueur);
+//   displayAllPlayers();
+//   document.getElementById('form').reset();
+//   document.getElementById('formulair').remove();
   
-});
+// });
 
 
 
@@ -61,7 +61,463 @@ function status() {
 
 document.getElementById('Position').addEventListener('change', status);
 
-// // Fonction de validation des champs
+//  // Fonction de validation des champs
+// function validation() {
+//   let name = document.getElementById('name').value;
+//   let photo = document.getElementById('photo').value;
+//   let position = document.getElementById('Position').value;
+//   let nationality = document.getElementById('Nationality').value;
+//   let club = document.getElementById('club').value;
+//   let rating = document.getElementById('rating').value;
+//   let pace = document.getElementById('pace').value;
+//   let shooting = document.getElementById('shooting').value;
+//   let passing = document.getElementById('passing').value;
+//   let dribbling = document.getElementById('dribbling').value;
+//   let defending = document.getElementById('defending').value;
+//   let physical = document.getElementById('physical').value;
+//   let diving = document.getElementById('diving').value;
+//   let handling = document.getElementById('handling').value;
+//   let kicking = document.getElementById('kicking').value;
+//   let reflexes = document.getElementById('reflexes').value;
+//   let speed = document.getElementById('speed').value;
+//   let positioning = document.getElementById('positioning').value;
+//   let valid = true;  
+
+//   const pattern = {
+//     name: /^[a-zA-Z\s]+$/, 
+//     photo: /^https:\/\//, 
+//     club: /^[a-zA-Z\s]+$/,
+//     nationality: /^https:\/\//,
+//     rating: /^\d{1,2}$/,
+//     pace: /^\d{1,2}$/,
+//     shooting: /^\d{1,2}$/,
+//     passing: /^\d{1,2}$/,
+//     dribbling: /^\d{1,2}$/,
+//     defending: /^\d{1,2}$/,
+//     physical: /^\d{1,2}$/,
+//     diving: /^\d{1,2}$/,
+//     handling: /^\d{1,2}$/,
+//     kicking: /^\d{1,2}$/,
+//     reflexes: /^\d{1,2}$/,
+//     speed: /^\d{1,2}$/,
+//     positioning: /^\d{1,2}$/
+//   };
+
+//   // Validation pour le nom
+//   let nameeror = document.getElementById('nameeror');
+//   if (!pattern.name.test(name)) {
+//     nameeror.innerText = "Le nom invalid";
+//     valid = false;
+//   } else {
+//     nameeror.innerText = "";
+//   }
+
+//   let photoeror = document.getElementById('photoeror');
+//   if (!pattern.photo.test(photo)) {
+//     photoeror.innerText = "Le lien invalid";
+//     valid = false;
+//   } else {
+//     photoeror.innerText = "";
+//   }
+//   let cluberror = document.getElementById('cluberror');
+//   if (!pattern.club.test(club)) {
+//     cluberror.innerText = "club invalid";
+//     valid = false;
+//   } else {
+//     cluberror.innerText = "";
+//   }
+
+//   let nateror = document.getElementById('nateror');
+//   if (!pattern.nationality.test(nationality)) {
+//     nateror.innerText = "nationality invalid";
+//     valid = false;
+//   } else {
+//     nateror.innerText = "";
+//   }
+
+//   let rateror = document.getElementById('rateror');
+//   if (!pattern.rating.test(rating)) {
+//     rateror.innerText = "rating invalid";
+//     valid = false;
+//   } else {
+//     rateror.innerText = "";
+//   }
+
+//   let paceror= document.getElementById('paceror');
+//   if (!pattern.pace.test(pace)) {
+//     paceror.innerText = "*";
+//     valid = false;
+//   } else {
+//     paceror.innerText = "";
+//   }
+
+//   let shoteror = document.getElementById('shoteror');
+//   if (!pattern.pace.test(shooting)) {
+//     shoteror.innerText = "*";
+//     valid = false;
+//   } else {
+//     shoteror.innerText = "";
+//   }
+
+ 
+//   let passineror = document.getElementById('passineror');
+//   if (!pattern.passing.test(passing)) {
+//     passineror.innerText = "*";
+//     valid = false;
+//   } else {
+//     passineror.innerText = "";
+//   }
+
+//   let driberor = document.getElementById('driberor');
+//   if (!pattern.dribbling.test(dribbling)) {
+//     driberor.innerText = "*";
+//     valid = false;
+//   } else {
+//     driberor.innerText = "";
+//   }
+
+//   let deferor = document.getElementById('deferor');
+//   if (!pattern.defending.test(defending)) {
+//     deferor.innerText = "*";
+//     valid = false;
+//   } else {
+//     deferor.innerText = "";
+//   }  
+  
+//   let phyeror = document.getElementById('phyeror');
+//   if (!pattern.physical.test(physical)) {
+//     phyeror.innerText = "*";
+//     valid = false;
+//   } else {
+//     phyeror.innerText = "";
+//   }  
+
+//   let diveror = document.getElementById('diveror');
+//   if (!pattern.diving.test(diving)) {
+//     diveror.innerText = "*";
+//     valid = false;
+//   } else {
+//     diveror.innerText = "";
+//   }  
+//   let haneror = document.getElementById('haneror');
+//   if (!pattern.handling.test(handling)) {
+//     haneror.innerText = "*";
+//     valid = false;
+//   } else {
+//     haneror.innerText = "";
+//   }  
+  
+//   let kiceror = document.getElementById('kiceror');
+//   if (!pattern.handling.test(kicking)) {
+//     kiceror.innerText = "*";
+//     valid = false;
+//   } else {
+//     kiceror.innerText = "";
+//   } 
+
+//   let referor = document.getElementById('referor');
+//   if (!pattern.reflexes.test(reflexes)) {
+//     referor.innerText = "*";
+//     valid = false;
+//   } else {
+//     referor.innerText = "";
+//   } 
+
+//   let spederor= document.getElementById('spederor');
+//   if (!pattern.speed.test(speed)) {
+//     spederor.innerText = "*";
+//     valid = false;
+//   } else {
+//     spederor.innerText = "";
+//   }
+  
+//   let poseror= document.getElementById('poseror');
+//   if (!pattern.positioning.test(positioning)) {
+//     poseror.innerText = "*";
+//     valid = false;
+//   } else {
+//     poseror.innerText = "";
+//   } 
+
+
+//   if (valid) {
+//     let joueur = {
+//       name: name,
+//       photo: photo,
+//       position: position,
+//       nationality: nationality,
+//       club: club,
+//       rating: rating,
+//       pace: pace,
+//       shooting: shooting,
+//       passing: passing,
+//       dribbling: dribbling,
+//       defending: defending,
+//       physical: physical,
+//       diving: diving,
+//       handling: handling,
+//       kicking: kicking,
+//       reflexes: reflexes
+
+//     };  tableaujouer.push(joueur);
+
+  
+//      displayAllPlayers();
+  
+
+//      document.getElementById('formulair').reset();
+   
+//     }
+
+// };
+
+
+// // // Fonction de validation des champs
+// function validation() {
+//   let name = document.getElementById('name').value;
+//   let photo = document.getElementById('photo').value;
+//   let position = document.getElementById('Position').value;
+//   let nationality = document.getElementById('Nationality').value;
+//   let club = document.getElementById('club').value;
+//   let rating = document.getElementById('rating').value;
+//   let pace = document.getElementById('pace').value;
+//   let shooting = document.getElementById('shooting').value;
+//   let passing = document.getElementById('passing').value;
+//   let dribbling = document.getElementById('dribbling').value;
+//   let defending = document.getElementById('defending').value;
+//   let physical = document.getElementById('physical').value;
+//   let diving = document.getElementById('diving').value;
+//   let handling = document.getElementById('handling').value;
+//   let kicking = document.getElementById('kicking').value;
+//   let reflexes = document.getElementById('reflexes').value;
+//   let speed = document.getElementById('speed').value;
+//   let positioning = document.getElementById('positioning').value;
+//   let valid = true;  
+
+//   const pattern = {
+//     name: /^[a-zA-Z\s]+$/, 
+//     photo: /^https:\/\//, 
+//     club: /^[a-zA-Z\s]+$/,
+//     nationality: /^https:\/\//,
+//     rating: /^\d{1,2}$/,
+//     pace: /^\d{1,2}$/,
+//     shooting: /^\d{1,2}$/,
+//     passing: /^\d{1,2}$/,
+//     dribbling: /^\d{1,2}$/,
+//     defending: /^\d{1,2}$/,
+//     physical: /^\d{1,2}$/,
+//     diving: /^\d{1,2}$/,
+//     handling: /^\d{1,2}$/,
+//     kicking: /^\d{1,2}$/,
+//     reflexes: /^\d{1,2}$/,
+//     speed: /^\d{1,2}$/,
+//     positioning: /^\d{1,2}$/
+//   };
+
+ 
+//   let nameeror = document.getElementById('nameeror');
+//   if (!pattern.name.test(name)) {
+//     nameeror.innerText = "Le nom invalid";
+//     valid = false;
+//   } else {
+//     nameeror.innerText = "";
+//   }
+
+//   let photoeror = document.getElementById('photoeror');
+//   if (!pattern.photo.test(photo)) {
+//     photoeror.innerText = "Le lien invalid";
+//     valid = false;
+//   } else {
+//     photoeror.innerText = "";
+//   }
+//   let cluberror = document.getElementById('cluberror');
+//   if (!pattern.club.test(club)) {
+//     cluberror.innerText = "club invalid";
+//     valid = false;
+//   } else {
+//     cluberror.innerText = "";
+//   }
+
+//   let nateror = document.getElementById('nateror');
+//   if (!pattern.nationality.test(nationality)) {
+//     nateror.innerText = "nationality invalid";
+//     valid = false;
+//   } else {
+//     nateror.innerText = "";
+//   }
+
+//   let rateror = document.getElementById('rateror');
+//   if (!pattern.rating.test(rating)) {
+//     rateror.innerText = "rating invalid";
+//     valid = false;
+//   } else {
+//     rateror.innerText = "";
+//   }
+
+//   let paceror= document.getElementById('paceror');
+//   if (!pattern.pace.test(pace)) {
+//     paceror.innerText = "*";
+//     valid = false;
+//   } else {
+//     paceror.innerText = "";
+//   }
+
+//   let shoteror = document.getElementById('shoteror');
+//   if (!pattern.pace.test(shooting)) {
+//     shoteror.innerText = "*";
+//     valid = false;
+//   } else {
+//     shoteror.innerText = "";
+//   }
+
+ 
+//   let passineror = document.getElementById('passineror');
+//   if (!pattern.passing.test(passing)) {
+//     passineror.innerText = "*";
+//     valid = false;
+//   } else {
+//     passineror.innerText = "";
+//   }
+
+//   let driberor = document.getElementById('driberor');
+//   if (!pattern.dribbling.test(dribbling)) {
+//     driberor.innerText = "*";
+//     valid = false;
+//   } else {
+//     driberor.innerText = "";
+//   }
+
+//   let deferor = document.getElementById('deferor');
+//   if (!pattern.defending.test(defending)) {
+//     deferor.innerText = "*";
+//     valid = false;
+//   } else {
+//     deferor.innerText = "";
+//   }  
+  
+//   let phyeror = document.getElementById('phyeror');
+//   if (!pattern.physical.test(physical)) {
+//     phyeror.innerText = "*";
+//     valid = false;
+//   } else {
+//     phyeror.innerText = "";
+//   }  
+
+//   let diveror = document.getElementById('diveror');
+//   if (!pattern.diving.test(diving)) {
+//     diveror.innerText = "*";
+//     valid = false;
+//   } else {
+//     diveror.innerText = "";
+//   }  
+//   let haneror = document.getElementById('haneror');
+//   if (!pattern.handling.test(handling)) {
+//     haneror.innerText = "*";
+//     valid = false;
+//   } else {
+//     haneror.innerText = "";
+//   }  
+  
+//   let kiceror = document.getElementById('kiceror');
+//   if (!pattern.handling.test(kicking)) {
+//     kiceror.innerText = "*";
+//     valid = false;
+//   } else {
+//     kiceror.innerText = "";
+//   } 
+
+//   let referor = document.getElementById('referor');
+//   if (!pattern.reflexes.test(reflexes)) {
+//     referor.innerText = "*";
+//     valid = false;
+//   } else {
+//     referor.innerText = "";
+//   } 
+
+//   let spederor= document.getElementById('spederor');
+//   if (!pattern.speed.test(speed)) {
+//     spederor.innerText = "*";
+//     valid = false;
+//   } else {
+//     spederor.innerText = "";
+//   }
+  
+//   let poseror= document.getElementById('poseror');
+//   if (!pattern.positioning.test(positioning)) {
+//     poseror.innerText = "*";
+//     valid = false;
+//   } else {
+//     poseror.innerText = "";
+//   } 
+
+
+//   if (valid) {
+//     let joueur = {
+//       name: name,
+//       photo: photo,
+//       position: position,
+//       nationality: nationality,
+//       club: club,
+//       rating: rating,
+//       pace: pace,
+//       shooting: shooting,
+//       passing: passing,
+//       dribbling: dribbling,
+//       defending: defending,
+//       physical: physical,
+//       diving: diving,
+//       handling: handling,
+//       kicking: kicking,
+//       reflexes: reflexes
+
+//     }; 
+//      tableaujouer.push(joueur);
+
+  
+//      displayAllPlayers();
+  
+
+//      document.getElementById('formulair').reset();
+   
+//     }
+
+// };
+// // Ajout par form
+// document.getElementById('submit').addEventListener('click', function (e) {
+//   e.preventDefault(); 
+//   console.log(1);
+//   const Valid= validation();
+//   if (Valid) {
+//   let joueur = {
+//       name: document.getElementById('name').value,
+//       photo: document.getElementById('photo').value,
+//       position: document.getElementById('Position').value,
+//       nationality: document.getElementById('Nationality').value,
+//       club: document.getElementById('club').value,
+//       rating: document.getElementById('rating').value,
+//       pace: document.getElementById('pace').value,
+//       shooting: document.getElementById('shooting').value,
+//       passing: document.getElementById('passing').value,
+//       dribbling: document.getElementById('dribbling').value,
+//       defending: document.getElementById('defending').value,
+//       physical: document.getElementById('physical').value,
+//       diving: document.getElementById('diving').value,
+//       handling: document.getElementById('handling').value,
+//       kicking: document.getElementById('kicking').value,
+//       reflexes: document.getElementById('reflexes').value,
+//       speed: document.getElementById('speed').value,
+//       positioning: document.getElementById('positioning').value,
+//   };
+//     tableaujouer.push(joueur);
+//   displayAllPlayers();
+//   document.getElementById('form').reset();
+//   document.getElementById('formulair').remove();
+// }
+
+// });
+
+
+// Fonction de validation des champs
 function validation() {
   let name = document.getElementById('name').value;
   let photo = document.getElementById('photo').value;
@@ -81,11 +537,11 @@ function validation() {
   let reflexes = document.getElementById('reflexes').value;
   let speed = document.getElementById('speed').value;
   let positioning = document.getElementById('positioning').value;
-  let valid = true;  
+  let valid = true;
 
   const pattern = {
-    name: /^[a-zA-Z\s]+$/, 
-    photo: /^https:\/\//, 
+    name: /^[a-zA-Z\s]+$/,
+    photo: /^https:\/\//,
     club: /^[a-zA-Z\s]+$/,
     nationality: /^https:\/\//,
     rating: /^\d{1,2}$/,
@@ -103,142 +559,142 @@ function validation() {
     positioning: /^\d{1,2}$/
   };
 
-  // Validation pour le nom
-  let nameeror = document.getElementById('nameeror');
+  // Validation des champs avec mise à jour des erreurs
+  let nameError = document.getElementById('nameeror');
   if (!pattern.name.test(name)) {
-    nameeror.innerText = "Le nom invalid";
+    nameError.innerText = "Le nom est invalide";
     valid = false;
   } else {
-    nameeror.innerText = "";
+    nameError.innerText = "";
   }
 
-  let photoeror = document.getElementById('photoeror');
+  let photoError = document.getElementById('photoeror');
   if (!pattern.photo.test(photo)) {
-    photoeror.innerText = "Le lien invalid";
+    photoError.innerText = "Le lien est invalide";
     valid = false;
   } else {
-    photoeror.innerText = "";
+    photoError.innerText = "";
   }
-  let cluberror = document.getElementById('cluberror');
-  if (!pattern.club.test(club)) {
-    cluberror.innerText = "club invalid";
-    valid = false;
-  } else {
-    cluberror.innerText = "";
-  }
+   let clubError = document.getElementById('cluberror');
+   if (!pattern.club.test(club)) {
+     clubError.innerText = "club invalid";
+     valid = false;
+   } else {
+     clubError.innerText = "";
+   }
 
-  let nateror = document.getElementById('nateror');
+  let natEror = document.getElementById('nateror');
   if (!pattern.nationality.test(nationality)) {
-    nateror.innerText = "nationality invalid";
+    natEror.innerText = "nationality invalid";
     valid = false;
   } else {
-    nateror.innerText = "";
+    natEror.innerText = "";
   }
 
-  let rateror = document.getElementById('rateror');
+  let ratEror = document.getElementById('rateror');
   if (!pattern.rating.test(rating)) {
-    rateror.innerText = "rating invalid";
+    ratEror.innerText = "rating invalid";
     valid = false;
   } else {
-    rateror.innerText = "";
+    ratEror.innerText = "";
   }
 
-  let paceror= document.getElementById('paceror');
-  if (!pattern.pace.test(pace)) {
-    paceror.innerText = "*";
-    valid = false;
-  } else {
-    paceror.innerText = "";
-  }
+  // let pacEror= document.getElementById('paceror');
+  // if (!pattern.pace.test(pace)) {
+  //   pacEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   pacEror.innerText = "";
+  // }
 
-  let shoteror = document.getElementById('shoteror');
-  if (!pattern.pace.test(shooting)) {
-    shoteror.innerText = "*";
-    valid = false;
-  } else {
-    shoteror.innerText = "";
-  }
+  // let shotEror = document.getElementById('shoteror');
+  // if (!pattern.pace.test(shooting)) {
+  //   shotEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   shotEror.innerText = "";
+  // }
 
  
-  let passineror = document.getElementById('passineror');
-  if (!pattern.passing.test(passing)) {
-    passineror.innerText = "*";
-    valid = false;
-  } else {
-    passineror.innerText = "";
-  }
+  // let passinEror = document.getElementById('passineror');
+  // if (!pattern.passing.test(passing)) {
+  //   passinEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   passinEror.innerText = "";
+  // }
 
-  let driberor = document.getElementById('driberor');
-  if (!pattern.dribbling.test(dribbling)) {
-    driberor.innerText = "*";
-    valid = false;
-  } else {
-    driberor.innerText = "";
-  }
+  // let dribEror = document.getElementById('driberor');
+  // if (!pattern.dribbling.test(dribbling)) {
+  //   dribEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   dribEror.innerText = "";
+  // }
 
-  let deferor = document.getElementById('deferor');
-  if (!pattern.defending.test(defending)) {
-    deferor.innerText = "*";
-    valid = false;
-  } else {
-    deferor.innerText = "";
-  }  
+  // let defEror = document.getElementById('deferor');
+  // if (!pattern.defending.test(defending)) {
+  //   defEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   defEror.innerText = "";
+  // }  
   
-  let phyeror = document.getElementById('phyeror');
-  if (!pattern.physical.test(physical)) {
-    phyeror.innerText = "*";
-    valid = false;
-  } else {
-    phyeror.innerText = "";
-  }  
+  // let phyEror = document.getElementById('phyeror');
+  // if (!pattern.physical.test(physical)) {
+  //   phyEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   phyEror.innerText = "";
+  // }  
 
-  let diveror = document.getElementById('diveror');
-  if (!pattern.diving.test(diving)) {
-    diveror.innerText = "*";
-    valid = false;
-  } else {
-    diveror.innerText = "";
-  }  
-  let haneror = document.getElementById('haneror');
-  if (!pattern.handling.test(handling)) {
-    haneror.innerText = "*";
-    valid = false;
-  } else {
-    haneror.innerText = "";
-  }  
+  // let divEror = document.getElementById('diveror');
+  // if (!pattern.diving.test(diving)) {
+  //   divEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   divEror.innerText = "";
+  // } 
+
+  // let hanEror = document.getElementById('haneror');
+  // if (!pattern.handling.test(handling)) {
+  //   hanEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   hanEror.innerText = "";
+  // }  
   
-  let kiceror = document.getElementById('kiceror');
-  if (!pattern.handling.test(kicking)) {
-    kiceror.innerText = "*";
-    valid = false;
-  } else {
-    kiceror.innerText = "";
-  } 
+  // let kicEror = document.getElementById('kiceror');
+  // if (!pattern.handling.test(kicking)) {
+  //   kicEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   kicEror.innerText = "";
+  // } 
 
-  let referor = document.getElementById('referor');
-  if (!pattern.reflexes.test(reflexes)) {
-    referor.innerText = "*";
-    valid = false;
-  } else {
-    referor.innerText = "";
-  } 
+  // let refEror = document.getElementById('referor');
+  // if (!pattern.reflexes.test(reflexes)) {
+  //   refEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   refEror.innerText = "";
+  // } 
 
-  let spederor= document.getElementById('spederor');
-  if (!pattern.speed.test(speed)) {
-    spederor.innerText = "*";
-    valid = false;
-  } else {
-    spederor.innerText = "";
-  }
+  // let spedEror= document.getElementById('spederor');
+  // if (!pattern.speed.test(speed)) {
+  //   spedEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   spedEror.innerText = "";
+  // }
   
-  let poseror= document.getElementById('poseror');
-  if (!pattern.positioning.test(positioning)) {
-    poseror.innerText = "*";
-    valid = false;
-  } else {
-    poseror.innerText = "";
-  } 
-
+  // let posEror= document.getElementById('poseror');
+  // if (!pattern.positioning.test(positioning)) {
+  //   posEror.innerText = "*";
+  //   valid = false;
+  // } else {
+  //   posEror.innerText = "";
+  // } 
 
   if (valid) {
     let joueur = {
@@ -257,19 +713,26 @@ function validation() {
       diving: diving,
       handling: handling,
       kicking: kicking,
-      reflexes: reflexes
+      reflexes: reflexes,
+      speed: speed,
+      positioning: positioning
+    };
+    tableaujouer.push(joueur);
+    displayAllPlayers();
+    document.getElementById('form').reset();
+    document.getElementById('formulair').remove();
+  }
 
-    };  tableaujouer.push(joueur);
+  return valid; 
+}
 
-  
-     displayAllPlayers();
-  
-
-     document.getElementById('formulair').reset();
-   
-    }
-
-};
+// Ajout par le formulaire
+document.getElementById('submit').addEventListener('click', function (e) {
+  e.preventDefault(); 
+  const valid = validation();
+  if (valid) {
+  }
+});
 
 
 
@@ -569,12 +1032,12 @@ document.getElementById("bank8").addEventListener("click", function () {
 
 
 
-function addPlayerToPos(card , poste){
-  card.addEventListener('click', function(){
+function addPlayerToPos(card, poste) {
+  card.addEventListener('click', function() {
     poste.parentElement.parentElement.parentElement.appendChild(card);
     poste.parentElement.parentElement.classList.add('hidden');
     document.getElementById("players-container").classList.add('hidden');
     
-    card.classList.add("scale-[0.7]");
+    card.classList.add("scale-[0.2]", "lg:scale-[0.7]");
   })
 }
