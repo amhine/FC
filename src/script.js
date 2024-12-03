@@ -181,7 +181,7 @@ function validation() {
   };
 
   // Validation pour le nom
-  let nameError = document.getElementById('nameeror');
+  let nameeror = document.getElementById('nameeror');
   if (!pattern.name.test(name)) {
     nameeror.innerText = "Le nom invalid";
     valid = false;
@@ -228,7 +228,7 @@ function validation() {
     paceror.innerText = "";
   }
 
-  let paceError = document.getElementById('shoteror');
+  let shoteror = document.getElementById('shoteror');
   if (!pattern.pace.test(shooting)) {
     shoteror.innerText = "*";
     valid = false;
@@ -237,12 +237,12 @@ function validation() {
   }
 
  
-  let passingError = document.getElementById('passineror');
+  let passineror = document.getElementById('passineror');
   if (!pattern.passing.test(passing)) {
     passineror.innerText = "*";
     valid = false;
   } else {
-    passingError.innerText = "";
+    passineror.innerText = "";
   }
 
   let driberor = document.getElementById('driberor');
@@ -334,7 +334,7 @@ function validation() {
       diving: diving,
       handling: handling,
       kicking: kicking,
-      reflexes: reflexe
+      reflexes: reflexes
 
     }
   
@@ -408,41 +408,102 @@ function filterPosition(position) {
                 </div>
             `;
     playersContainer.appendChild(playerDiv);
+
+    if(position == "ST"){
+      addPlayerToPos(playerDiv , document.getElementById('pos1'));
+    }
+    if(position == "ST"){
+      addPlayerToPos(playerDiv , document.getElementById('pos2'));
+    }
+    if(position == "LW"){
+      addPlayerToPos(playerDiv , document.getElementById('pos3'));
+    }
+
+    if(position == "CM"){
+      addPlayerToPos(playerDiv , document.getElementById('pos4'));
+    }
+    if(position == "CM"){
+      addPlayerToPos(playerDiv , document.getElementById('pos5'));
+    }
+    if(position == "RW"){
+      addPlayerToPos(playerDiv , document.getElementById('pos6'));
+    }
+    if(position == "LB"){
+      addPlayerToPos(playerDiv , document.getElementById('pos7'));
+    }
+    if(position == "CB"){
+      addPlayerToPos(playerDiv , document.getElementById('pos8'));
+    }
+    if(position == "CB"){
+      addPlayerToPos(playerDiv , document.getElementById('pos9'));
+    }
+    if(position == "RB"){
+      addPlayerToPos(playerDiv , document.getElementById('pos10'));
+    }
+    if(position == "GK"){
+      addPlayerToPos(playerDiv , document.getElementById('pos11'));
+    }
   });
+
+  
 }
 
 
 
 document.getElementById("pos1").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
   filterPosition("ST");
+ 
 });
 document.getElementById("pos2").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
   filterPosition("ST");
+  
 });
 document.getElementById("pos3").addEventListener("click", function () {
-  filterPosition("LM");
+  document.getElementById("players-container").classList.remove('hidden');
+  filterPosition("LW");
 });
 document.getElementById("pos4").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
   filterPosition("CM");
 });
 document.getElementById("pos5").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
   filterPosition("CM");
 });
 document.getElementById("pos6").addEventListener("click", function () {
-  filterPosition("RM");
+  document.getElementById("players-container").classList.remove('hidden');
+  filterPosition("RW");
 });
 document.getElementById("pos7").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
   filterPosition("LB");
 });
 document.getElementById("pos8").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
   filterPosition("CB");
 });
 document.getElementById("pos9").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
   filterPosition("CB");
 });
 document.getElementById("pos10").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
   filterPosition("RB");
 });
 document.getElementById("pos11").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
   filterPosition("GK");
 });
+
+
+
+function addPlayerToPos(card , poste){
+  card.addEventListener('click', function(){
+    poste.parentElement.parentElement.parentElement.appendChild(card);
+    poste.parentElement.parentElement.classList.add('hidden');
+    document.getElementById("players-container").classList.add('hidden');
+    card.classList.add('scale-[0.7] ');
+  })
+}
