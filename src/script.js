@@ -64,9 +64,9 @@ document.getElementById('Position').addEventListener('change', status);
 // cart  joueur
 function cart(joueur) {
   return `
-      <div class="relative w-36 h-52 flex flex-wrap justify-center gap-4">
+      <div class="relative w-36 h-52 flex flex-wrap justify-center ">
         <img src="../img/badge_gold.webp" alt="" class="absolute inset-0 w-full h-full object-cover" />
-        <div class="absolute inset-0 mb-2 flex flex-col items-center justify-center text-white p-2">
+        <div class="absolute inset-0  flex flex-col items-center justify-center text-white ">
           <div class="flex items-center">
             <div class="flex flex-col justify-between items-center w-[10%] h-5">
               <span class="text-sm font-bold text-yellow-600">${joueur.rating}</span>
@@ -345,7 +345,7 @@ function validation() {
 
 
 // filtre position
-function filterPosition(position) {
+function filterPosition(position,pos) {
   const playersContainer = document.getElementById("players-container");
   playersContainer.innerHTML = "";
   const filteredPlayers = tableaujouer.filter(function (joueur) {
@@ -355,9 +355,9 @@ function filterPosition(position) {
     const playerDiv = document.createElement("div");
     playerDiv.classList.add("player-card");
     playerDiv.innerHTML = `
-                <div class="relative w-36 h-52 flex flex-wrap justify-center gap-4">
+                <div class="relative w-36 h-52 flex flex-wrap justify-center ">
                   <img src="../img/badge_gold.webp" alt="" class="absolute inset-0 w-full h-full object-cover" />
-                  <div class="absolute inset-0 mb-2 flex flex-col items-center justify-center text-white p-2">
+                  <div class="absolute inset-0  flex flex-col items-center justify-center text-white ">
                     <div class="flex items-center">
                       <div class="flex flex-col justify-between items-center w-[10%] h-5">
                         <span class="text-sm font-bold text-yellow-600">${joueur.rating}</span>
@@ -409,38 +409,38 @@ function filterPosition(position) {
             `;
     playersContainer.appendChild(playerDiv);
 
-    if(position == "ST"){
+    if(pos == "st"){
       addPlayerToPos(playerDiv , document.getElementById('pos1'));
     }
-    if(position == "ST"){
+    if(pos == "st2"){
       addPlayerToPos(playerDiv , document.getElementById('pos2'));
     }
-    if(position == "LW"){
+    if(pos == "lw"){
       addPlayerToPos(playerDiv , document.getElementById('pos3'));
     }
 
-    if(position == "CM"){
+    if(pos == "cm"){
       addPlayerToPos(playerDiv , document.getElementById('pos4'));
     }
-    if(position == "CM"){
+    if(pos == "cm2"){
       addPlayerToPos(playerDiv , document.getElementById('pos5'));
     }
-    if(position == "RW"){
+    if(pos == "rw"){
       addPlayerToPos(playerDiv , document.getElementById('pos6'));
     }
-    if(position == "LB"){
+    if(pos == "lb"){
       addPlayerToPos(playerDiv , document.getElementById('pos7'));
     }
-    if(position == "CB"){
+    if(pos == "cb"){
       addPlayerToPos(playerDiv , document.getElementById('pos8'));
     }
-    if(position == "CB"){
+    if(pos == "cb2"){
       addPlayerToPos(playerDiv , document.getElementById('pos9'));
     }
-    if(position == "RB"){
+    if(pos == "rb"){
       addPlayerToPos(playerDiv , document.getElementById('pos10'));
     }
-    if(position == "GK"){
+    if(pos == "gk"){
       addPlayerToPos(playerDiv , document.getElementById('pos11'));
     }
   });
@@ -452,49 +452,49 @@ function filterPosition(position) {
 
 document.getElementById("pos1").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("ST");
+  filterPosition("ST","st");
  
 });
 document.getElementById("pos2").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("ST");
+  filterPosition("ST","st2");
   
 });
 document.getElementById("pos3").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("LW");
+  filterPosition("LW","lw");
 });
 document.getElementById("pos4").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("CM");
+  filterPosition("CM","cm");
 });
 document.getElementById("pos5").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("CM");
+  filterPosition("CM","cm2");
 });
 document.getElementById("pos6").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("RW");
+  filterPosition("RW","rw");
 });
 document.getElementById("pos7").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("LB");
+  filterPosition("LB","lb");
 });
 document.getElementById("pos8").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("CB");
+  filterPosition("CB","cb");
 });
 document.getElementById("pos9").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("CB");
+  filterPosition("CB","cb2");
 });
 document.getElementById("pos10").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("RB");
+  filterPosition("RB","rb");
 });
 document.getElementById("pos11").addEventListener("click", function () {
   document.getElementById("players-container").classList.remove('hidden');
-  filterPosition("GK");
+  filterPosition("GK","gk");
 });
 
 
@@ -504,6 +504,7 @@ function addPlayerToPos(card , poste){
     poste.parentElement.parentElement.parentElement.appendChild(card);
     poste.parentElement.parentElement.classList.add('hidden');
     document.getElementById("players-container").classList.add('hidden');
-    card.classList.add('scale-[0.7] ');
+    
+    card.classList.add("scale-[0.7]");
   })
 }
