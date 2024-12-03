@@ -11,7 +11,7 @@ document.getElementById('hideForm').addEventListener('click', function () {
   document.getElementById('formulair').reset();
 });
 
-// Cach form sub
+
 // // Ajout par form
 document.getElementById('submit').addEventListener('click', function (e) {
   e.preventDefault(); 
@@ -39,6 +39,9 @@ document.getElementById('submit').addEventListener('click', function (e) {
   };
     tableaujouer.push(joueur);
   displayAllPlayers();
+  document.getElementById('form').reset();
+  document.getElementById('formulair').remove();
+  
 });
 
 
