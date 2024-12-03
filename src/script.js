@@ -273,6 +273,7 @@ function validation() {
 
 
 
+
 // cart  joueur
 function cart(joueur) {
   return `
@@ -577,4 +578,3 @@ function addPlayerToPos(card , poste){
     card.classList.add("scale-[0.7]");
   })
 }
-
