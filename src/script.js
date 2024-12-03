@@ -61,84 +61,7 @@ function status() {
 
 document.getElementById('Position').addEventListener('change', status);
 
-// cart  joueur
-function cart(joueur) {
-  return `
-      <div class="relative w-36 h-52 flex flex-wrap justify-center ">
-        <img src="../img/badge_gold.webp" alt="" class="absolute inset-0 w-full h-full object-cover" />
-        <div class="absolute inset-0  flex flex-col items-center justify-center text-white ">
-          <div class="flex items-center">
-            <div class="flex flex-col justify-between items-center w-[10%] h-5">
-              <span class="text-sm font-bold text-yellow-600">${joueur.rating}</span>
-              <span class="text-sm font-semibold">${joueur.position}</span>
-            </div>
-            <div>
-              <img src="${joueur.photo}" alt="" class="w-16 h-16 rounded-md" />
-            </div>
-          </div>
-          <h3 class="text-center text-sm font-bold">${joueur.name}</h3>
-          <div class="flex justify-between items-center">
-            <div class="flex items-center">
-              <img src="${joueur.flag}" alt="" class="w-4 h-4 rounded-sm" />
-            </div>
-            <span class="block text-center text-xs">${joueur.club}</span>
-          </div>
-          <div class="flex flex-col text-xs w-full px-2 h-16">
-            ${joueur.position === "GK"
-      ? `
-            <div class="flex justify-around">
-              <span>DIV:</span><span>${joueur.diving}</span>
-              <span>HAN:</span><span>${joueur.handling}</span>
-            </div>
-            <div class="flex justify-around">
-              <span>KIC:</span><span>${joueur.kicking}</span>
-              <span>REF:</span><span>${joueur.reflexes}</span>
-            </div>
-            <div class="flex justify-around">
-              <span>SPD:</span><span>${joueur.speed}</span>
-              <span>POS:</span><span>${joueur.positioning}</span>
-            </div>`
-      : `
-            <div class="flex justify-around">
-              <span>PAC:</span><span>${joueur.pace}</span>
-              <span>SHO:</span><span>${joueur.shooting}</span>
-            </div>
-            <div class="flex justify-around">
-              <span>PAS:</span><span>${joueur.passing}</span>
-              <span>DRI:</span><span>${joueur.dribbling}</span>
-            </div>
-            <div class="flex justify-around">
-              <span>DEF:</span><span>${joueur.defending}</span>
-              <span>PHY:</span><span>${joueur.physical}</span>
-            </div>`
-    }
-          </div>
-        </div>
-      </div>
-    `;
-}
-
-// stoc json
-let tableaujouer = [];
-
-// fetch json
-fetch("players.json")
-  .then((response) => response.json())
-  .then((tableau) => {
-    tableaujouer = tableau.players;
-    displayAllPlayers();
-  })
-
-// Fonction pour afficher tous les joueurs
-function displayAllPlayers() {
-  const container = document.getElementById("cards-container");
-  container.innerHTML = "";
-  tableaujouer.forEach((joueur) => {
-    container.insertAdjacentHTML("beforeend", cart(joueur));
-  });
-}
-
-// Fonction de validation des champs
+// // Fonction de validation des champs
 function validation() {
   let name = document.getElementById('name').value;
   let photo = document.getElementById('photo').value;
@@ -336,11 +259,98 @@ function validation() {
       kicking: kicking,
       reflexes: reflexes
 
+    };  tableaujouer.push(joueur);
+
+  
+     displayAllPlayers();
+  
+
+     document.getElementById('formulair').reset();
+   
     }
-  
-  }
-  
+
 };
+
+
+
+// cart  joueur
+function cart(joueur) {
+  return `
+      <div class="relative w-36 h-52 flex flex-wrap justify-center ">
+        <img src="../img/badge_gold.webp" alt="" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0  flex flex-col items-center justify-center text-white ">
+          <div class="flex items-center">
+            <div class="flex flex-col justify-between items-center w-[10%] h-5">
+              <span class="text-sm font-bold text-yellow-600">${joueur.rating}</span>
+              <span class="text-sm font-semibold">${joueur.position}</span>
+            </div>
+            <div>
+              <img src="${joueur.photo}" alt="" class="w-16 h-16 rounded-md" />
+            </div>
+          </div>
+          <h3 class="text-center text-sm font-bold">${joueur.name}</h3>
+          <div class="flex justify-between items-center">
+            <div class="flex items-center">
+              <img src="${joueur.flag}" alt="" class="w-4 h-4 rounded-sm" />
+            </div>
+            <span class="block text-center text-xs">${joueur.club}</span>
+          </div>
+          <div class="flex flex-col text-xs w-full px-2 h-16">
+            ${joueur.position === "GK"
+      ? `
+            <div class="flex justify-around">
+              <span>DIV:</span><span>${joueur.diving}</span>
+              <span>HAN:</span><span>${joueur.handling}</span>
+            </div>
+            <div class="flex justify-around">
+              <span>KIC:</span><span>${joueur.kicking}</span>
+              <span>REF:</span><span>${joueur.reflexes}</span>
+            </div>
+            <div class="flex justify-around">
+              <span>SPD:</span><span>${joueur.speed}</span>
+              <span>POS:</span><span>${joueur.positioning}</span>
+            </div>`
+      : `
+            <div class="flex justify-around">
+              <span>PAC:</span><span>${joueur.pace}</span>
+              <span>SHO:</span><span>${joueur.shooting}</span>
+            </div>
+            <div class="flex justify-around">
+              <span>PAS:</span><span>${joueur.passing}</span>
+              <span>DRI:</span><span>${joueur.dribbling}</span>
+            </div>
+            <div class="flex justify-around">
+              <span>DEF:</span><span>${joueur.defending}</span>
+              <span>PHY:</span><span>${joueur.physical}</span>
+            </div>`
+    }
+          </div>
+        </div>
+      </div>
+    `;
+}
+
+// stoc json
+let tableaujouer = [];
+
+// fetch json
+fetch("players.json")
+  .then((response) => response.json())
+  .then((tableau) => {
+    tableaujouer = tableau.players;
+    displayAllPlayers();
+  })
+
+// Fonction pour afficher tous les joueurs
+function displayAllPlayers() {
+  const container = document.getElementById("cards-container");
+  container.innerHTML = "";
+  tableaujouer.forEach((joueur) => {
+    container.insertAdjacentHTML("beforeend", cart(joueur));
+  });
+
+  
+}
 
 
 
@@ -443,6 +453,31 @@ function filterPosition(position,pos) {
     if(pos == "gk"){
       addPlayerToPos(playerDiv , document.getElementById('pos11'));
     }
+
+    if(pos == "lwbnk"){
+      addPlayerToPos(playerDiv , document.getElementById('bank1'));
+    }
+    if(pos == "lbbnk"){
+      addPlayerToPos(playerDiv , document.getElementById('bank2'));
+    }
+    if(pos == "stbnk"){
+      addPlayerToPos(playerDiv , document.getElementById('bank3'));
+    }
+    if(pos == "gkbnk"){
+      addPlayerToPos(playerDiv , document.getElementById('bank4'));
+    }
+    if(pos == "cmbnk1"){
+      addPlayerToPos(playerDiv , document.getElementById('bank5'));
+    }
+    if(pos == "cmbnk2"){
+      addPlayerToPos(playerDiv , document.getElementById('bank6'));
+    }
+    if(pos == "rwbnk"){
+      addPlayerToPos(playerDiv , document.getElementById('bank7'));
+    }
+    if(pos == "rbbnk"){
+      addPlayerToPos(playerDiv , document.getElementById('bank8'));
+    }
   });
 
   
@@ -498,6 +533,40 @@ document.getElementById("pos11").addEventListener("click", function () {
 });
 
 
+document.getElementById("bank1").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
+  filterPosition("LW","lwbnk");
+});
+document.getElementById("bank2").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
+  filterPosition("LB","lbbnk");
+});
+document.getElementById("bank3").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
+  filterPosition("ST","stbnk");
+});
+document.getElementById("bank4").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
+  filterPosition("GK","gkbnk");
+});
+document.getElementById("bank5").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
+  filterPosition("CM","cmbnk1");
+});
+document.getElementById("bank6").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
+  filterPosition("CM","cmbnk2");
+});
+document.getElementById("bank7").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
+  filterPosition("RW","rwbnk");
+});
+document.getElementById("bank8").addEventListener("click", function () {
+  document.getElementById("players-container").classList.remove('hidden');
+  filterPosition("RB","rbbnk");
+});
+
+
 
 function addPlayerToPos(card , poste){
   card.addEventListener('click', function(){
@@ -508,3 +577,4 @@ function addPlayerToPos(card , poste){
     card.classList.add("scale-[0.7]");
   })
 }
+
