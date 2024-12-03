@@ -27,8 +27,8 @@
                 
                 <div class=" absolute top-0  lg:left-[9%] flex flex-col lg:gap-5 left-[20%] ">
                     <div class="flex justify-around ">
-                        <div class="flex flex-col items-center">
-                            <div class="relative  flex flex-col items-center justify-center  ">
+                        <div class="flex flex-col items-center  empty-card" id="">
+                            <div class="relative  flex flex-col items-center justify-center player-card ">
                                 <img class=" lg:w-[85px] w-[45px] " src="../img/carteblack.webp " alt="">
                                 <div class=" absolute lg:text-xs text-[8px] flex flex-col items-center justify-center lg:gap-3  gap-[2px]">
                                     <p class="text-white">Attaquant </p>
@@ -37,7 +37,7 @@
                                 </div>
                                 
                             </div>
-                            <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 gap-1 lg:w-[35px] w-[20px] " ><p>ST</p></div> 
+                            <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 gap-1 lg:w-[35px] w-[20px] player-position" ><p>ST</p></div> 
                         </div> 
                         
                     
@@ -60,13 +60,13 @@
                             <div class="relative flex flex-col items-center justify-center  ">
                                 <img class=" lg:w-[85px] w-[45px]" src="../img/carteblack.webp " alt="">
                                 <div class=" absolute lg:text-xs text-[8px] flex flex-col items-center justify-center lg:gap-3 gap-[2px]">
-                                    <p class="text-white">Milieu </p>
+                                    <p class="text-white">Ailier  </p>
                                     <p class="text-white"> gauche</p>
                                     <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="pos3" >Add</button>
                                 </div>
                                  
                             </div>
-                            <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1 " ><p>LM</p></div> 
+                            <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1 " ><p>LW</p></div> 
                         </div> 
                         <div class="flex flex-col items-center">
                             <div class="relative flex flex-col items-center justify-center  ">
@@ -97,13 +97,13 @@
                             <div class="relative flex flex-col items-center justify-center ">
                                 <img class=" lg:w-[85px] w-[45px]" src="../img/carteblack.webp " alt="">
                                 <div class=" absolute lg:text-xs text-[8px]  flex flex-col items-center justify-center lg:gap-3 gap-[2px]">
-                                    <p class="text-white">Milieu </p>
+                                    <p class="text-white">Ailier </p>
                                     <p class="text-white">droit</p>
                                     <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="pos6" >Add</button>
                                 </div>
                                  
                             </div>
-                            <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1 " ><p>RM</p></div> 
+                            <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1 " ><p>RW</p></div> 
                         </div> 
                         <div id="players-container" class="flex justify-center  items-center text-center bg-black players-container absolute z-10"></div> 
                     </div>
@@ -181,34 +181,34 @@
             
 
 
-            <div class="bg-[#333333] lg:w-[300px] lg:h-[600px] lg:m-6 rounded-xl flex flex-col lg:gap-5  ">
+            <div class="bg-[#333333] lg:w-[300px] lg:h-[630px] lg:m-6 rounded-xl flex flex-col lg:gap-5 pt-4 ">
                 
                 <div class="flex flex-row justify-evenly">
-                    <div class="flex flex-col items-center">
+                    <div class="flex flex-col items-center cursor-pointer">
                         <div class="relative flex flex-col items-center justify-center ">
                             <img class="lg:w-[80px] w-[45px] " src="../img/carteblack.webp " alt="">
                             <div class=" absolute lg:text-xs text-[8px] flex flex-col items-center justify-center lg:gap-3  gap-[2px]">
-                                <p class="text-white">Milieu </p>
+                                <p class="text-white">Ailier  </p>
                                 <p class="text-white"> gauche</p>
-                                <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="bank1">Add</button>
+                                <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5 " id="bank1">Add</button>
                             </div>
                             
                         </div>
-                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1 " ><p>LM</p></div> 
+                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1 " ><p>LW</p></div> 
                     </div> 
 
 
                     <div class="flex flex-col items-center">
-                        <div class="relative flex flex-col items-center justify-center  ">
+                        <div class="relative flex flex-col items-center justify-center cursor-pointer ">
                             <img class=" lg:w-[80px] w-[45px]" src="../img/carteblack.webp " alt="">
                             <div class=" absolute lg:text-xs text-[8px]  flex flex-col items-center justify-center lg:gap-3  gap-[2px]">
-                                <p class="text-white">Milieu </p>
+                                <p class="text-white">Ailier  </p>
                                 <p class="text-white"> gauche</p>
                                 <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="bank2">Add</button>
                             </div>
                             
                         </div>
-                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1" ><p>LM</p></div> 
+                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1" ><p>LB</p></div> 
                     </div> 
                 </div>
 
@@ -217,7 +217,7 @@
 
                 <div class="flex flex-row justify-evenly">
                     <div class="flex flex-col items-center">
-                        <div class="relative flex flex-col items-center justify-center  ">
+                        <div class="relative flex flex-col items-center justify-center cursor-pointer ">
                             <img class=" lg:w-[80px] w-[45px]" src="../img/carteblack.webp " alt="">
                             <div class=" absolute lg:text-xs text-[8px]  flex flex-col items-center justify-center lg:gap-3  gap-[2px]">
                                 <p class="text-white">Attaquant </p>
@@ -230,17 +230,17 @@
                     </div> 
                 
                     <div class="flex flex-col items-center">
-                        <div class="relative flex flex-col items-center justify-center  ">
-                            <img class=" lg:w-[80px] w-[45px]" src="../img/carteblack.webp " alt="">
-                            <div class=" absolute lg:text-xs text-[8px] flex flex-col items-center justify-center lg:gap-3  gap-[2px]">
-                                <p class="text-white">Attaquant </p>
-                                <p class="text-white"> central</p>
-                                <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="bank4">Add</button>
+                        <div class="relative flex flex-col items-center justify-center cursor-pointer ">
+                            <img class=" lg:w-[85px] w-[45px]" src="../img/carteblack.webp " alt="">
+                            <div class=" absolute lg:text-xs text-[8px] flex flex-col items-center justify-center lg:gap-3 gap-[2px]">
+                                <p class="text-white">Gardien</p>
+                                <p class="text-white">de but</p>
+                                <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="bank8" >Add</button>
                             </div>
-                            
+                             
                         </div>
-                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1" ><p>ST</p></div> 
-                    </div> 
+                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1" ><p>GK</p></div> 
+                    </div>
 
 
                 </div>
@@ -251,7 +251,19 @@
                 <div class="flex flex-row justify-evenly  ">
                     
                     <div class="flex flex-col items-center">
-                        <div class="relative  flex flex-col items-center justify-center ">
+                        <div class="relative  flex flex-col items-center justify-center cursor-pointer ">
+                            <img class=" lg:w-[80px] w-[45px]" src="../img/carteblack.webp " alt="">
+                            <div class=" absolute lg:text-xs text-[8px] flex flex-col items-center justify-center lg:gap-3  gap-[2px]">
+                                <p class="text-white">Milieu </p>
+                                <p class="text-white">centraux</p>
+                                <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="bank4">Add</button>
+                            </div>
+                             
+                        </div>
+                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1" ><p>CM</p></div> 
+                    </div> 
+                    <div class="flex flex-col items-center">
+                        <div class="relative  flex flex-col items-center justify-center cursor-pointer">
                             <img class=" lg:w-[80px] w-[45px]" src="../img/carteblack.webp " alt="">
                             <div class=" absolute lg:text-xs text-[8px] flex flex-col items-center justify-center lg:gap-3  gap-[2px]">
                                 <p class="text-white">Milieu </p>
@@ -262,38 +274,38 @@
                         </div>
                         <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1" ><p>CM</p></div> 
                     </div> 
-                    <div class="flex flex-col items-center">
-                        <div class="relative  flex flex-col items-center justify-center ">
-                            <img class=" lg:w-[80px] w-[45px]" src="../img/carteblack.webp " alt="">
-                            <div class=" absolute lg:text-xs text-[8px] flex flex-col items-center justify-center lg:gap-3  gap-[2px]">
-                                <p class="text-white">Milieu </p>
-                                <p class="text-white">centraux</p>
-                                <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="bank6">Add</button>
-                            </div>
-                             
-                        </div>
-                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1" ><p>CM</p></div> 
-                    </div> 
 
                 </div>
 
 
                 <div class="flex flex-row justify-evenly">
+                    
 
                     <div class="flex flex-col items-center">
-                        <div class="relative flex flex-col items-center justify-center  ">
+                        <div class="relative flex flex-col items-center justify-center cursor-pointer ">
                             <img class=" lg:w-[80px] w-[45px]" src="../img/carteblack.webp " alt="">
                             <div class=" absolute lg:text-xs text-[8px] flex flex-col items-center justify-center lg:gap-3  gap-[2px]">
-                                <p class="text-white">Milieu </p>
+                                <p class="text-white">Ailier </p>
                                 <p class="text-white">droit</p>
-                                <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="bank7">Add</button>
+                                <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="bank6">Add</button>
                             </div>
                              
                         </div>
-                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1 " ><p>RM</p></div> 
+                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1 " ><p>RW</p></div> 
                     </div> 
 
-
+                    <div class="flex flex-col items-center">
+                        <div class="relative flex flex-col items-center justify-center cursor-pointer  ">
+                            <img class=" lg:w-[85px] w-[45px]" src="../img/carteblack.webp " alt="">
+                            <div class=" absolute lg:text-xs text-[8px] flex flex-col items-center justify-center lg:gap-3 gap-[2px]">
+                                <p class="text-white">Latéral</p>
+                                <p class="text-white">droit</p>
+                                <button class="  bg-gray-600 text-white rounded-full lg:w-10 w-5" id="bank7" >Add</button>
+                            </div>
+                             
+                        </div>
+                        <div class="bg-black text-white rounded-full flex justify-center items-center lg:text-xs text-[8px] lg:gap-2 lg:w-[35px] w-[20px] gap-1 " ><p>RB</p></div> 
+                    </div>
                    
 
                 </div>
@@ -306,7 +318,7 @@
 
            
                     <div id="formulair" class="absolute flex justify-center items-start mt-4 top-0 bg-gray-700 bg-opacity-50   hidden">
-                        <form id="form" class="bg-[#333333] w-[400px] h-auto p-6 rounded-lg ">
+                        <form id="form" class="bg-[#171717] w-[900px] h-auto p-6 rounded-lg ">
                             <h3 class="text-white" >Nom :</h3>
                             <span id="nameeror" class="text-red-600"></span>
                             <input type="text" id="name" name="name" class="w-full p-2 mb-4 rounded-md bg-gray-200">
@@ -319,9 +331,9 @@
                             <h3 class="text-white">Position :</h3>
                             <select id="Position" class="w-full p-1 mb-4  rounded-md bg-gray-200">
                                 <option value="ST">ST</option>
-                                <option value="LM">LM</option>
+                                <option value="LW">LW</option>
                                 <option value="CM">CM</option>
-                                <option value="RM">RM</option>
+                                <option value="RW">RW</option>
                                 <option value="LB">LB</option>
                                 <option value="RB">RB</option>
                                 <option value="GK">GK</option>
@@ -340,8 +352,8 @@
                             <span id="rateror" class="text-red-600"></span>
                             <input type="number" id="rating" name="rating" class="w-full p-2 mb-4 rounded-md bg-gray-200">
 
-                            <div id="joueurstatus">
-                                <div class="flex  ">
+                            <div id="joueurstatus" class="flex gap-1">
+                                
                                     <h3 class="text-white">Pace</h3>
                                     <span id="paceror" class="text-red-600"></span>
                                     <input type="number" id="pace" name="pace" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
@@ -353,8 +365,8 @@
                                     <h3 class="text-white">Passing</h3>
                                     <span id="passineror" class="text-red-600"></span>
                                     <input type="number" id="passing" name="passing" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
-                                </div>
-                                <div class="flex ">
+                               
+                                
                                     <h3 class="text-white">Dribbling</h3>
                                     <span id="driberor" class="text-red-600"></span>
                                     <input type="number" id="dribbling" name="dribbling" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
@@ -367,14 +379,14 @@
                                     <span id="phyeror" class="text-red-600"></span>
                                     <input type="number" id="physical" name="physical" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
                                 
-                                </div> 
+                                
                             </div>    
 
 
 
 
-                            <div id="GKstatus" class="hidden">
-                                <div class="flex  ">
+                            <div id="GKstatus" class="hidden flex gap-1">
+                                
                                     <h3 class="text-white">diving</h3>
                                     <span id="diveror" class="text-red-600"></span>
                                     <input type="number" id="diving" name="diving" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
@@ -386,8 +398,7 @@
                                     <h3 class="text-white">kicking</h3>
                                     <span id="kiceror" class="text-red-600"></span>
                                     <input type="number" id="kicking" name="kicking" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
-                                </div>
-                                <div class="flex ">
+                                
                                     <h3 class="text-white">reflexes</h3>
                                     <span id="referor" class="text-red-600"></span>
                                     <input type="number" id="reflexes" name="reflexes" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
@@ -400,7 +411,7 @@
                                     <span id="poseror" class="text-red-600"></span>
                                     <input type="number" id="positioning" name="positioning" class="w-14 h-8 p-2 mb-4 rounded-md bg-gray-200">
                                 
-                                </div> 
+                                
                             </div>    
                             
                             
@@ -412,8 +423,8 @@
                             
                     
                             <div class="flex justify-between mt-6">
-                                <button type="submit" id="submit" class="text-white bg-blue-600 w-36 rounded-2xl py-2 hover:bg-blue-800">Submit</button>
-                                <button type="button" id="hideForm" class="text-white bg-red-600 w-36 rounded-2xl py-2 hover:bg-red-800">Exit</button>
+                                <button type="submit" id="submit" class="text-white bg-blue-600 w-36 rounded-2xl py-2 hover:bg-blue-800 cursor-pointer">Submit</button>
+                                <button type="button" id="hideForm" class="text-white bg-red-600 w-36 rounded-2xl py-2 hover:bg-red-800 cursor-pointer">Exit</button>
                             </div>
                         </form>
                     </div>

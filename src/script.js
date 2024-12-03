@@ -12,16 +12,36 @@ document.getElementById('hideForm').addEventListener('click', function () {
 });
 
 // Cach form sub
+// // Ajout par form
 document.getElementById('submit').addEventListener('click', function (e) {
-  e.preventDefault();
-  const valid = validation()
-  if(valid){
+  e.preventDefault(); 
+  console.log(1);
 
-    document.getElementById('formulair').classList.add('hidden');
-    
-  }
-
+  let joueur = {
+      name: document.getElementById('name').value,
+      photo: document.getElementById('photo').value,
+      position: document.getElementById('Position').value,
+      nationality: document.getElementById('Nationality').value,
+      club: document.getElementById('club').value,
+      rating: document.getElementById('rating').value,
+      pace: document.getElementById('pace').value,
+      shooting: document.getElementById('shooting').value,
+      passing: document.getElementById('passing').value,
+      dribbling: document.getElementById('dribbling').value,
+      defending: document.getElementById('defending').value,
+      physical: document.getElementById('physical').value,
+      diving: document.getElementById('diving').value,
+      handling: document.getElementById('handling').value,
+      kicking: document.getElementById('kicking').value,
+      reflexes: document.getElementById('reflexes').value,
+      speed: document.getElementById('speed').value,
+      positioning: document.getElementById('positioning').value,
+  };
+    tableaujouer.push(joueur);
+  displayAllPlayers();
 });
+
+
 
 // form gk
 function status() {
