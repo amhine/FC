@@ -553,6 +553,7 @@ function addPlayerToPos(card, poste) {
     card.classList.add("scale-[0.2]", "lg:scale-[0.7]");
     card.addEventListener('click', function () {
       card.remove();
+      poste.parentElement.parentElement.classList.remove('hidden');
     });
   })
 } 
